@@ -743,18 +743,59 @@ function App() {
       // 1. Basic Station Code Mapping (Fallback/Mock for Indian Cities)
       const getStationCode = (city) => {
         const c = city.toLowerCase();
+        // Major metros
         if (c.includes('mumbai')) return 'BCT';
-        if (c.includes('delhi')) return 'NDLS';
+        if (c.includes('new delhi') || c.includes('delhi')) return 'NDLS';
         if (c.includes('bangalore') || c.includes('bengaluru')) return 'SBC';
         if (c.includes('hyderabad')) return 'HYB';
         if (c.includes('chennai')) return 'MAS';
-        if (c.includes('kolkata')) return 'HWH';
+        if (c.includes('kolkata') || c.includes('calcutta')) return 'HWH';
+        // North India
         if (c.includes('jaipur')) return 'JP';
-        if (c.includes('goa')) return 'MAO'; // Madgaon
+        if (c.includes('lucknow')) return 'LKO';
+        if (c.includes('varanasi') || c.includes('banaras')) return 'BSB';
+        if (c.includes('agra')) return 'AGC';
+        if (c.includes('prayagraj') || c.includes('allahabad')) return 'ALD';
+        if (c.includes('kanpur')) return 'CNB';
+        if (c.includes('amritsar')) return 'ASR';
+        if (c.includes('chandigarh')) return 'CDG';
+        if (c.includes('dehradun')) return 'DDN';
+        if (c.includes('haridwar')) return 'HW';
+        if (c.includes('meerut')) return 'MTC';
+        if (c.includes('jodhpur')) return 'JU';
+        if (c.includes('udaipur')) return 'UDZ';
+        if (c.includes('ajmer')) return 'AII';
+        // East India
+        if (c.includes('ranchi')) return 'RNC';
+        if (c.includes('patna')) return 'PNBE';
+        if (c.includes('gaya')) return 'GAYA';
+        if (c.includes('dhanbad')) return 'DHN';
+        if (c.includes('jamshedpur') || c.includes('tatanagar')) return 'TATA';
+        if (c.includes('bhubaneswar')) return 'BBS';
+        if (c.includes('cuttack')) return 'CTC';
+        if (c.includes('guwahati')) return 'GHY';
+        // West India
         if (c.includes('pune')) return 'PUNE';
         if (c.includes('ahmedabad')) return 'ADI';
-        if (c.includes('agra')) return 'AGC';
-        if (c.includes('varanasi')) return 'BSB';
+        if (c.includes('surat')) return 'ST';
+        if (c.includes('vadodara') || c.includes('baroda')) return 'BRC';
+        if (c.includes('goa') || c.includes('madgaon')) return 'MAO';
+        if (c.includes('nashik')) return 'NK';
+        if (c.includes('aurangabad')) return 'AWB';
+        // Central India
+        if (c.includes('bhopal')) return 'BPL';
+        if (c.includes('indore')) return 'INDB';
+        if (c.includes('jabalpur')) return 'JBP';
+        if (c.includes('nagpur')) return 'NGP';
+        if (c.includes('raipur')) return 'R';
+        // South India
+        if (c.includes('coimbatore')) return 'CBE';
+        if (c.includes('madurai')) return 'MDU';
+        if (c.includes('thiruvananthapuram') || c.includes('trivandrum')) return 'TVC';
+        if (c.includes('kochi') || c.includes('ernakulam')) return 'ERS';
+        if (c.includes('mysuru') || c.includes('mysore')) return 'MYS';
+        if (c.includes('vijayawada')) return 'BZA';
+        if (c.includes('visakhapatnam') || c.includes('vizag')) return 'VSKP';
         return null;
       };
 
